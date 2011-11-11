@@ -1,0 +1,47 @@
+{exp:google_directions mode="walking" origin="" destination=""}
+
+<form action="" method="post">
+	<fieldset>
+	<legend>Origin and Destination</legend>
+		<input name="directions_origin" value="" />&nbsp;<input name="directions_destination" value="" />&nbsp;<select name="directions_mode"><option value="driving">Driving</option><option value="walking">Walking</option><option value="bicycling">Cycling</option></select><button>Get Directions</button>
+	</fieldset>
+</form>
+
+<p><strong>Status</strong>: {status} <strong>From Cache</strong>: {cached}</p>
+
+{if routes}
+
+{routes}
+
+<h1>Summary: {route_summary}, Count: {route_count}</h1>
+
+	<table>
+		{legs}
+		<tr class="leg">
+			<td>Leg {leg_count}</td>
+			<td>{leg_duration_text}</td>
+			<td>{leg_distance_text}</td>
+			<td>{leg_start_address} > {leg_end_address}</td>
+		</tr>
+		
+		{steps}
+		<tr class="steps">
+			<td>Step: {step_count}</td>
+			<td>{step_travel_mode}</td>
+			<td>{step_duration_text}</td>
+			<td>{step_html_instructions}</td>
+		</tr>	
+		{/steps}
+	
+		{/legs}
+	</table>
+
+{/routes}
+
+{if:else}
+
+<p>Sorry, we couldn't return directions for that query.</p>
+
+{/if}
+
+{/exp:google_directions}
