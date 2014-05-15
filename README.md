@@ -5,7 +5,9 @@ Returns directions from the Google Directions API
 
 The Google Directions plug-in allows you to pull data from the Google Directions API into your page templates. Please note that the relevant copyright is automatically appended to your output in order that this plug-in adheres to the Google Directions API terms of use.
 
+```
 {exp:google_directions}
+```
 
 Parameters:
 -------------------------------------
